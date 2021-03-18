@@ -1,14 +1,15 @@
-var path = require('path');
-var webpack = require('webpack');
-var baseConfig = require('./webpack.base.config');
-var merge = require('webpack-merge');
+const webpack = require('webpack');
+const baseConfig = require('./webpack.base.config');
+const { merge } = require('webpack-merge');
 
 module.exports = merge(baseConfig, {
   plugins:[
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"test"'
-      }
+        NODE_ENV: '"development"'
+      },
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false
     })
   ]
 });

@@ -1,5 +1,4 @@
-var path = require('path');
-var webpack = require('webpack');
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   module: {
@@ -7,17 +6,29 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: {
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: "vue-loader",
         options: {
           loaders: {
             scss: 'vue-style-loader!css-loader!sass-loader'
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'css-loader',
+          'sass-loader'
+        ]
       }
-    ]
-  }
+    ],
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+  ],
 };
