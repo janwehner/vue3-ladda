@@ -16,7 +16,7 @@ npm install vue3-ladda
 import VueLadda from 'vue3-ladda'
 
 // or import the vue single file component, if you set vue-loader, sass-loader and babel properly.
-import VueLadda from 'vue-ladda3/src/vue-ladda.vue'
+import VueLadda from 'vue3-ladda/src/vue-ladda.vue'
 
 // then register it globally
 Vue.createApp({...}).component('vue-ladda', VueLadda)
