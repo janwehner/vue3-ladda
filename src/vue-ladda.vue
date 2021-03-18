@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Ladda from 'ladda/js/ladda';
+  import * as Ladda from 'ladda';
 
   export default {
     name: 'VueLadda',
@@ -55,7 +55,7 @@
       this.loading ? this.ladda.start() : this.ladda.stop();
     },
 
-    beforeDestroy: function() {
+    beforeUnmount: function() {
       this.ladda.remove();
       delete this.ladda;
     }

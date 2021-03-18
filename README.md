@@ -1,31 +1,15 @@
-# vue-ladda
+# vue3-ladda
 
-A vue wrapper for https://github.com/hakimel/Ladda .
-
-[Demo](http://blog.alanslab.space/vue-ladda/)
+A vue 3 wrapper for https://github.com/hakimel/Ladda based on https://github.com/zcfan/vue-ladda. 
 
 [Demo source code](docs/index.html)
 
 ## Installation
 
-### Direct Download / CDN
-
-[https://unpkg.com/vue-ladda/dist/vue-ladda.js](https://unpkg.com/vue-ladda/dist/vue-ladda.js)
-
-```html
-<script src="https://unpkg.com/vue-ladda"></script>
-```
-
-Then you can use it in this way:
-
-```html
-<vue-ladda ...>...</vue-ladda>
-```
-
 ### NPM
 
 ```bash
-npm install vue-ladda
+npm install vue3-ladda
 ```
 
 ```javascript
@@ -35,17 +19,16 @@ import VueLadda from 'vue-ladda'
 import VueLadda from 'vue-ladda/src/vue-ladda.vue'
 
 // then register it globally
-Vue.component('vue-ladda', VueLadda)
+Vue.createApp({...}).component('vue-ladda', VueLadda)
 
 // or locally
 var Child = {
   template: '<vue-ladda>Click Me!</vue-ladda>'
 }
-new Vue({
-  // ...
+
+const app = Vue.createApp({
   components: {
-    // <my-component> will only be available in parent's template
-    'vue-ladda': VueLadda
+    'vue-ladda': VueLadda,
   }
 })
 ```
