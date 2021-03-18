@@ -1,6 +1,6 @@
 <template>
-  <button class="ladda-button" ref="ladda" :data-style="dataStyle" @click="handleClick">
-    <span class="ladda-label"><slot>Submit</slot></span>
+  <button :class="buttonClass" ref="ladda" :data-style="dataStyle" @click="handleClick">
+    <slot><span class="ladda-label">Submit</span></slot>
   </button>
 </template>
 
@@ -11,8 +11,13 @@
     name: 'VueLadda',
 
     props: {
+      // customizable button's class attribute - you can use your own CSS class
+      'buttonClass': {
+        type: [String, Object],
+        default: 'ladda-button'
+      },
       // use vue props validation to make sure "data-style" is given. (ladda need it)
-      "dataStyle": {
+      'dataStyle': {
         type: String,
         default: 'expand-left'
       },
