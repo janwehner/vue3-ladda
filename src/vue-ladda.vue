@@ -50,7 +50,7 @@
       this.loading ? this.ladda.start() : this.ladda.stop();
     },
 
-    beforeDestroy: function() {
+    beforeUnmount: function() {
       this.ladda.remove();
       delete this.ladda;
     }
