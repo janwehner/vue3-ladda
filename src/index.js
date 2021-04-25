@@ -5,3 +5,5 @@ export default {
     app.component('vue-ladda', VueLadda);
   }
 }
+
+ export { VueLadda };

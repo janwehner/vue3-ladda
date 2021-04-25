@@ -12,6 +12,9 @@ module.exports = merge(baseConfig, {
     path: path.resolve(__dirname, '../dist'),
     filename: 'vue-ladda.js'
   },
+  externals: {
+    vue: 'Vue'
+  },
   plugins:[
     new webpack.DefinePlugin({
       'process.env': {
