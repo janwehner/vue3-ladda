@@ -1,9 +1,11 @@
 import VueLadda from './vue-ladda.vue';
 
-export default {
-  install: (app, options) => {
+const install = (app, options) => {
     app.component('vue-ladda', VueLadda);
-  }
-}
+};
 
- export { VueLadda };
+VueLadda.install = install;
+
+export default VueLadda;
+
+//export { VueLadda };

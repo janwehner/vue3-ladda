@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>vue-ladda example</title>
 
-  <script src="https://unpkg.com/vue@2.3.2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
   <script src="./vue-ladda.js"></script>
 
   <style>
@@ -23,9 +23,8 @@
   </div>
 
   <script>
-    var app = new Vue({
-      el: '#app',
-      data: function() {
+    const app = Vue.createApp({
+      data() {
         return {
           buttons: [
             {
@@ -61,7 +60,6 @@
       }
     });
 
-
     function updateButtonProgress(duration, button) {
       var start = null;
       function update(timestamp) {
@@ -77,6 +75,8 @@
 
       window.requestAnimationFrame(update);
     }
+    app.use(VueLadda.default);
+    app.mount('#app');
   </script>
 </body>
 </html>
