@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const TerserPlugin = require("terser-webpack-plugin");
 const baseConfig = require('./webpack.base.config');
 const { merge } = require('webpack-merge');
 
@@ -12,6 +13,9 @@ module.exports = merge(baseConfig, {
     path: path.resolve(__dirname, '../dist'),
     filename: 'vue-ladda.js'
   },
+  externals: {
+    vue: 'vue'
+  },
   plugins:[
     new webpack.DefinePlugin({
       'process.env': {
@@ -23,5 +27,10 @@ module.exports = merge(baseConfig, {
   ],
   optimization: {
     minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
   },
 });

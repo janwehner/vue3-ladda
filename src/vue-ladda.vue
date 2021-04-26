@@ -10,6 +10,10 @@
   export default {
     name: 'VueLadda',
 
+    emits: [
+      'click',
+    ],
+
     props: {
       // customizable button's class attribute - you can use your own CSS class
       'buttonClass': {
@@ -47,12 +51,12 @@
     methods: {
       handleClick: function(e) {
         this.$emit('click', e);
-      }
+      },
     },
 
     mounted: function() {
-      this.ladda = Ladda.create(this.$refs.ladda);
-      this.loading ? this.ladda.start() : this.ladda.stop();
+        this.ladda = Ladda.create(this.$refs.ladda);
+        this.loading ? this.ladda.start() : this.ladda.stop();
     },
 
     beforeUnmount: function() {
