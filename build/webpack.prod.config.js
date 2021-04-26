@@ -11,7 +11,7 @@ module.exports = merge(baseConfig, {
     library: 'VueLadda',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, '../dist'),
-    filename: 'vue-ladda.js'
+    filename: 'vue3-ladda.js'
   },
   externals: {
     vue: 'Vue'
