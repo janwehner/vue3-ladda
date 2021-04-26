@@ -14,7 +14,7 @@ module.exports = merge(baseConfig, {
     filename: 'vue3-ladda.js'
   },
   externals: {
-    vue: 'Vue'
+    vue: 'vue'
   },
   plugins:[
     new webpack.DefinePlugin({
