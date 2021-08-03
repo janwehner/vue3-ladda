@@ -5,7 +5,7 @@
   "homepage": "https://github.com/janwehner/vue3-ladda",
   "main": "dist/vue-ladda.js",
   "scripts": {
-    "build-js": "webpack --config ./build/webpack.prod.config.js",
+    "build-js": "export NODE_ENV=production && webpack --config ./build/webpack.prod.config.js",
     "build-doc": "cp dist/vue-ladda.js docs/",
     "test": "karma start",
     "publish-patch": "npm run test && npm run build-js && npm run build-doc && git push && npm version patch && git push --tags && npm publish"
@@ -39,7 +39,8 @@
     "karma-jasmine": "^4.0.1",
     "karma-spec-reporter": "0.0.32",
     "karma-webpack": "^5.0.0",
-    "node-sass": "^5.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
     "terser-webpack-plugin": "^5.1.1",
     "vue": "^3.0.7",

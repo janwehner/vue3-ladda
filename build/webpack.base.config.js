@@ -1,6 +1,16 @@
 const { VueLoaderPlugin } = require('vue-loader')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const env = process.env.NODE_ENV === 'production'
+    ? 'production'
+    : 'development';
+
+const extractOrInjectStyles = env !== 'production'
+    ? 'vue-style-loader'
+    : MiniCssExtractPlugin.loader;
 
 module.exports = {
+  mode: env,
   module: {
     rules: [
       {
@@ -17,7 +27,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
+          extractOrInjectStyles,
           'css-loader',
           'sass-loader'
         ]
@@ -26,5 +36,8 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+      new MiniCssExtractPlugin({
+        filename: 'vue-ladda.css',
+      }),
   ],
 };
