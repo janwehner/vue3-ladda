@@ -1,6 +1,6 @@
 {
   "name": "vue3-ladda",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A vue 3 component wrapper of Ladda button.",
   "homepage": "https://github.com/janwehner/vue3-ladda",
   "main": "dist/vue-ladda.js",
